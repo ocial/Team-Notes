@@ -106,5 +106,39 @@ cross_val_score(sgd_clf, X_train, y_train_5, cv=3, scoring='accuracy')
 
 <br>
 
+* 오차 행렬
+
+```python
+# cross_val_predict는 k-겹 교차 검증을 수행하지만 예측값을 반환
+from sklearn.model_selection import cross_val_predict
+
+y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3)
+
+# 오차 행렬
+from sklearn.metrics import confusion_matrix
+
+confusion_matrix(y_train_5, y_train_pred)  # 실제값과 예측값을 비교
+```
+
+<br>
+
+* 정밀도와 재현율 and F1 점수
+
+    > 정밀도 : 양성 예측기의 정확도
+    >
+    > 재현율 : 진짜 양성 비율, 민감도
+    >
+    > 정밀도와 재현율은 트레이드오프(상충관계)
+    >
+    > F1 점수 : 정밀도와 재현율의 조화 평균
+
+```python
+from sklearn.metrics import precision_score, recall_score, f1_score
+
+precision_score(y_train_5, y_train_pred)  # 정밀도 = TP / (TP + FP)
+recall_score(y_train_5, y_train_pred)  # 재현율 = TP / (TP + FN)
+f1_score(y_train_5, y_train_pred)  # F1 점수 = 2 x (정밀도 x 재현율) / (정밀도 + 재현율)
+```
+
 
 
