@@ -41,3 +41,12 @@ c. 95%의 의미는 무엇인가?
 <img src="https://support.minitab.com/ko-kr/minitab/18/confidence_interval_def.gif" />
 
 20개의 표본 중 19개(95%)가 모집단 모수를 포함하는 신뢰구간을 생성한다는 것을 나타낸다.
+
+
+
+
+
+
+
+
+
